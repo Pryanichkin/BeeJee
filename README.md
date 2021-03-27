@@ -2,9 +2,9 @@
 by Pryanichkin
 ____
 
-**Выложено на beejee.pbteamstudio.com**
+Выложено на **beejee.pbteamstudio.com**
 
-Точка входа: https://beejee.pbteamstudio.com/coding-challenges/pryanichkin/index.php
+Точка входа: **https://beejee.pbteamstudio.com/coding-challenges/pryanichkin/index.php**
 ____
 
 Данные сервера:
