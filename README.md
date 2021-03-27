@@ -2,6 +2,7 @@
 by Pryanichkin
 
 **Выложено на beejee.pbteamstudio.com**
+
 Точка входа: https://beejee.pbteamstudio.com/coding-challenges/pryanichkin/index.php
 
 Данные сервера:
