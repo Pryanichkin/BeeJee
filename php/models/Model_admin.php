@@ -17,7 +17,8 @@ class Model_admin extends Model
     public function editData($id, $isEdit, $data) {
         $fieldName = array_key_first($data);
         $fieldValue = $data[$fieldName];
+        $isEditText = $isEdit ? ", is_edit = '$isEdit'" : "";
 
-        return DB::query("UPDATE tasks SET $fieldName = '$fieldValue', is_edit = '$isEdit' WHERE id = $id") ? $fieldValue : false;
+        return DB::query("UPDATE tasks SET $fieldName = '$fieldValue' $isEditText WHERE id = $id") ? $fieldValue : false;
     }
 }

@@ -49,9 +49,9 @@ function initTable() {
                 } else if (field == 'is_done') {
                     value == 1 ? $('#radio-status-done').prop('checked', true) : $('#radio-status-not-done').prop('checked', true);
 
-                    let $mts = $('#modal-task-save');
-                    $mts.data('index', $element.parent().data('index'));
-                    $mts.data('id', row['id']);
+                    let $mss = $('#modal-status-save');
+                    $mss.data('index', $element.parent().data('index'));
+                    $mss.data('id', row['id']);
                     $('#modal-edit-status').modal('show');
                 }
             },
