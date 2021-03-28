@@ -15,6 +15,7 @@ class Model_admin extends Model
     }
 
     public function editData($id, $isEdit, $data) {
+
         $fieldName = array_key_first($data);
         $fieldValue = $data[$fieldName];
         $isEditText = $isEdit ? ", is_edit = '$isEdit'" : "";

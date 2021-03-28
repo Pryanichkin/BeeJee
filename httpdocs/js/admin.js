@@ -70,6 +70,7 @@ function doneFormatter(v, r) {
 }
 
 $(function () {
+
     initTable();
 
     $('#modal-task-save').on('click', function (e) {
