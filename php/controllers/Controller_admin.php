@@ -35,8 +35,9 @@ class Controller_admin extends Controller
                     $id = htmlspecialchars($_POST['id']);
                     $fieldName = empty($_POST['task']) ? 'is_done' : 'task';
                     $fieldValue = $_POST[$fieldName];
+                    $isEdit = empty($_POST['task']) ? 0 : 1;
 
-                    exit ($this->model->editData($id, [$fieldName => $fieldValue]));
+                    exit ($this->model->editData($id, $isEdit, [$fieldName => $fieldValue]));
             }
         } else {
             session_start();

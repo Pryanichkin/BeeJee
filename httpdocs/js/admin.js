@@ -20,7 +20,7 @@ function initTable() {
                     sortable: true,
                 },
                 {
-                    title: 'Задача',
+                    title: 'Текст задачи',
                     field: 'task',
                     align: 'center',
                     valign: 'middle',
@@ -41,14 +41,17 @@ function initTable() {
             onDblClickCell: function (field, value, row, $element) {
                 if (field == 'task') {
                     $('#modal-task-text').val(value);
-                    $('#modal-task-save').data('index', $element.parent().data('index'));
-                    $('#modal-task-save').data('id', row['id']);
+                    let $mts = $('#modal-task-save');
+                    $mts.data('index', $element.parent().data('index'));
+                    $mts.data('id', row['id']);
+                    $mts.data('value', value);
                     $('#modal-edit-task').modal('show');
                 } else if (field == 'is_done') {
                     value == 1 ? $('#radio-status-done').prop('checked', true) : $('#radio-status-not-done').prop('checked', true);
 
-                    $('#modal-status-save').data('index', $element.parent().data('index'));
-                    $('#modal-status-save').data('id', row['id']);
+                    let $mts = $('#modal-task-save');
+                    $mts.data('index', $element.parent().data('index'));
+                    $mts.data('id', row['id']);
                     $('#modal-edit-status').modal('show');
                 }
             },
@@ -75,7 +78,14 @@ $(function () {
         let task = $('#modal-task-text').val(),
             index = $(this).data('index'),
             id = $(this).data('id'),
+            oldValue = $(this).data('value'),
             data = {'type': 'EDIT', 'id': id, 'task': task};
+
+        if(task == oldValue) {
+            $('#modal-edit-task').modal('hide');
+            showToast('Внимание', 'Задача не была изменена');
+            return;
+        }
 
         $.ajax({
             method: 'POST',

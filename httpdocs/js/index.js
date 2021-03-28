@@ -20,7 +20,7 @@ function initTable() {
                     sortable: true,
                 },
                 {
-                    title: 'Задача',
+                    title: 'Текст задачи',
                     field: 'task',
                     align: 'center',
                     valign: 'middle',

@@ -13,5 +13,5 @@ abstract class Model
 
         return DB::query("INSERT INTO tasks($columns) VALUES($values)") ? json_encode($data) : false;
     }
-    public function editData($id, $data){return null;}
+    public function editData($id, $isEdit, $data){return null;}
 }

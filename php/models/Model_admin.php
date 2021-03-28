@@ -14,10 +14,10 @@ class Model_admin extends Model
         return DB::query('SELECT id, username, email, task, is_done, is_edit FROM tasks');
     }
 
-    public function editData($id, $data) {
+    public function editData($id, $isEdit, $data) {
         $fieldName = array_key_first($data);
         $fieldValue = $data[$fieldName];
 
-        return DB::query("UPDATE tasks SET $fieldName = '$fieldValue', is_edit = 1 WHERE id = $id") ? $fieldValue : false;
+        return DB::query("UPDATE tasks SET $fieldName = '$fieldValue', is_edit = '$isEdit' WHERE id = $id") ? $fieldValue : false;
     }
 }
